@@ -56,7 +56,7 @@ nav a:hover {
 .hero {
   height: 50vh;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-              url('/image/portada.jpg') center center no-repeat;
+              url('image/portada.jpg') center center no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
