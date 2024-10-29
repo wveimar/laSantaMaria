@@ -1,0 +1,306 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* Navigation */
+header {
+  background-color: #2c5530;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h1 {
+  color: white;
+  font-size: 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #a8e6cf;
+}
+
+/* Hero section */
+.hero {
+  height: 50vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+              url('/image/portada.jpg') center center no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 33.33%; /* Ajusta el ancho al 33.33% para ocupar 1/3 del contenedor */
+  height: auto; /* Permite que la altura se ajuste automáticamente */
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Hero text animation */
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Ensure text is above the image */
+}
+
+.animated-text {
+  animation: fadeInUp 1s ease-in-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better contrast */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* White text border */
+  padding: 0.5rem; /* Add some padding for visual separation */
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive text alignment for small screens */
+@media (max-width: 400px) {
+  .hero-text {
+    text-align: left; /* Align text to the left on small screens */
+    padding-top: 2rem; /* Add top padding for better spacing */
+  }
+}
+
+/* Content sections */
+.content-section {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content-section h2 {
+  text-align: center;
+  color: #327739;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+/* Dos columnas layout */
+.two-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.two-columns div:first-child {
+  text-align: justify;
+  flex: 1;
+  padding-left: 2rem;
+}
+
+.two-columns div:last-child {
+  flex: 1;
+}
+
+.image-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto; /* Ajusta la altura automáticamente */
+}
+
+.image-placeholder-image {
+  max-width: 60%; /* Evita que la imagen salga del contenedor */
+  height: auto;   /* Mantiene la proporción de la imagen */
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .two-columns {
+    flex-direction: column;
+  }
+
+  .two-columns div:first-child {
+    order: 2;
+  }
+
+  .two-columns div:last-child {
+    order: 1;
+    margin: 1rem auto; /* Centra el contenedor en pantallas pequeñas */
+  }
+
+  .image-placeholder {
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho en pantallas pequeñas */
+    padding: 1rem;
+  }
+
+  .image-placeholder-image {
+    width: 100%; /* La imagen ocupa el ancho completo en pantallas pequeñas */
+    max-width: 100%;
+  }
+}
+
+
+
+/* Product grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.product-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Practices grid */
+.practices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.practice-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.practice-item h3 {
+  color: #2c5530;
+  margin-bottom: 1rem;
+}
+
+/* Contact section */
+.contact-info {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 2;
+}
+
+/* Footer */
+footer {
+  background: #2c5530;
+  color: white;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-link {
+  color: white;
+  font-size: 1.5rem;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-link:hover {
+  color: #a8e6cf;
+  transform: translateY(-3px);
+}
+
+/* Placeholder for images */
+.placeholder {
+  background: #e0e0e0;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .two-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
